@@ -15,12 +15,6 @@ hash git >/dev/null 2>&1 && env git clone --depth=1 https://github.com/robbyruss
   exit
 }
 
-echo "\033[0;34mLooking for an existing zsh config...\033[0m"
-if [ -f ~/.zshrc ] || [ -h ~/.zshrc ]; then
-  echo "\033[0;33mFound ~/.zshrc.\033[0m \033[0;32mBacking up to ~/.zshrc.pre-oh-my-zsh\033[0m";
-  mv ~/.zshrc ~/.zshrc.pre-oh-my-zsh;
-fi
-
 echo "\033[0;34mCopying your current PATH and adding it to the end of ~/.zshrc for you.\033[0m"
 sed -i -e "/export PATH=/ c\\
 export PATH=\"$PATH\"
